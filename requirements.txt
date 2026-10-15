@@ -1,0 +1,6 @@
+# 生成数据和评测只用标准库；下面是训练（train_lora.py、merge_ckpt.py、sample_gen.py）要装的
+torch
+transformers
+peft
+trl
+datasets

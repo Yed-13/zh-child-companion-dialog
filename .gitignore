@@ -1,0 +1,16 @@
+# 生成物、模型、密钥
+runs/
+out/
+work/
+*.gguf
+*.safetensors
+*.bin
+*_heldout.json
+*_evals.json
+.env
+*.key
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
