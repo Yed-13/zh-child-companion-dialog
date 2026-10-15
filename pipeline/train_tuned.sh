@@ -6,7 +6,7 @@
 set -euo pipefail
 BASE=${BASE:?设底模目录或名字 BASE}
 mkdir -p runs
-export LR=1e-4 LORA_DROPOUT=0.1 WD=0.01 NEFT=5 BEST=1 GC=0
+export LR=1e-4 LORA_DROPOUT=0.1 WD=0.01 NEFT=5 BEST=1 GC=${GC:-1}   # GC=0 更快，但 32GB 显存、批大小 8、长度 640 会爆显存
 for b in ${BANDS:-0 1 2}; do
   BAND=$b EVAL_FILE=data/band${b}_test.jsonl python pipeline/train_lora.py "$BASE" data/band${b}_train.jsonl runs/tuned_band$b 2 > runs/tuned_band$b.log 2>&1
   echo TUNED_DONE $b                                      # LoRA 在 runs/tuned_band$b_best
