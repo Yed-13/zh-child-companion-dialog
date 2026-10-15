@@ -13,7 +13,7 @@ A Chinese child-companion dialogue dataset split by school stage, with scripts f
 
 </div>
 
-A child says one sentence to an AI study companion (called 小助手, "little helper", in the data) and the companion answers in one or two short sentences. The data comes in three school stages, each with its own vocabulary, depth and reply length, and each split into train and test sets. Everything was synthesized with a large language model. There are no real children's utterances and no personal data.
+A child says one sentence to an AI study companion (called 小助手, "little helper", in the data) and the companion answers in one or two short sentences. The data comes in three school stages, each with its own vocabulary, depth and reply length, and each split into train and test sets. Everything was synthesized with a large language model. There are no real children's utterances and no personal data. The data is single turn and the knowledge answers were not checked by hand, so review it before using it in a product.
 
 ## Highlights
 
@@ -119,15 +119,6 @@ pipeline/   llm_client.py · gen_questions.py · gen_answers.py · repair.py · 
 bench/      persona_eval.py (hard rules) · judge_eval.py (LLM judge) · run_eval.sh
 tests/      small tests for the filter and the client fallback: python tests/test_build.py
 ```
-
-## Limitations
-
-- Synthetic and single turn, with no multi-turn context. The child utterances are an LLM's imitation and will differ from how real children talk.
-- Knowledge answers were not checked by hand one by one and may contain mistakes. Verify before using them for factual QA.
-- The reply style is fixed (short, encouraging, admits being an AI, keeps no secrets, does no arithmetic) and may not suit every product. A few replies keep catchphrases such as "翻翻笔记本" (let me check my notebook).
-- Categories such as secrecy and inappropriate topics deliberately include mildly provocative child utterances, to teach refusal and redirection.
-- `persona/example_persona.txt` is a neutral example written from the rules the data follows, not the original prompt used for generation.
-- Judge scores come from another LLM. Treat them as a signal, not a substitute for human review or real-world safety testing.
 
 ## License and citation
 
