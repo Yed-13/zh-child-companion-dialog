@@ -25,12 +25,14 @@ A child says one sentence to an AI study companion (called 小助手, "little he
 
 ## At a glance
 
-| Stage | Age | Train | Test | Avg. child utterance (chars) | Avg. reply (chars) | Length cap (chat / knowledge) |
+| Stage | Age | Train | Test | Avg. question | Avg. reply | Length cap |
 |---|---|---:|---:|---:|---:|---:|
 | 0 preschool to grade 2 | 4-8 | 3,111 | 167 | 13.3 | 29.2 | 30 / 45 |
 | 1 grades 3-6 | 8-12 | 8,166 | 429 | 16.6 | 38.8 | 40 / 60 |
 | 2 middle school | 12-15 | 4,138 | 216 | 12.8 | 46.2 | 50 / 90 |
 | Total | | 15,415 | 812 | | | |
+
+Averages are in Chinese characters. The length cap is the review limit: chat first, knowledge answers second.
 
 Each stage has 15 to 17 categories: greetings and questions about the companion itself, "are you a real person?", feelings, school and family, friendship, requests to keep a secret, knowledge questions (math concepts, science, Chinese, history and geography), not wanting to study, asking the companion to do things it can't, inappropriate topics and probing, asking directly for arithmetic answers, and the half-finished sentences a speech recognizer produces. Per-category counts are in the [data card](data/README.md) (Chinese).
 
